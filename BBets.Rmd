@@ -1,7 +1,7 @@
 ---
 title: "Brownlows Bets"
-author: "Your Name"
-date: "Year 2020"
+author: "Adriana Lopez"
+date: "Spring 2021"
 output: 
   html_document:
     number_sections: true
@@ -35,17 +35,100 @@ There are 3 questions and there should be at least 3 separate commits, at least 
 
 <!--Decide on your methods:  In this section explain the approach you will take to attack the issue --- how will you decide on a likely estimate of professor Brownlow's earnings or losses after 637 bets. Also explain how you construct a 95% confidence interval about your estimate of his winnings !-->
 
+```{r}
+birthdays=1:365
+saveanswer=vector("numeric")
+for(j in 1:1000){
+
+savebank=0
+for(i in 1:637){
+Classsample<-sample(birthdays,35,replace=TRUE)
+d<-duplicated(Classsample)
+# If we add up d and number greater than zero, then we had responses with the same birthday.
+if(sum(d)>0){
+  savebank=savebank+1
+}else{
+  savebank=savebank-4.30
+}
+}
+saveanswer[j]<-savebank
+}
+```
+```{r}
+hist(saveanswer)
+ssanswer<-sort(saveanswer)
+print(ssanswer[25])
+print(ssanswer[975])
+```
+
+After adjusting the amount Brownlow pays out, we determined that the most fair 
+odds are a 4.30:1 ratio. 
 
 # What size of class makes the 2:1 bet fair?  
 <!--Explain and display the results of your method of coming up with the estimate of professor Brownlows betting profits!-->
 
+```{r}
+birthdays=1:365
+saveanswer=vector("numeric")
+for(j in 1:1000){
+
+savebank=0
+for(i in 1:637){
+Classsample<-sample(birthdays,35,replace=TRUE)
+d<-duplicated(Classsample)
+# If we add up d and number greater than zero, then we had responses with the same birthday.
+if(sum(d)>0){
+  savebank=savebank+1
+}else{
+  savebank=savebank-4.30
+}
+}
+saveanswer[j]<-savebank
+}
+```
+```{r}
+hist(saveanswer)
+ssanswer<-sort(saveanswer)
+print(ssanswer[25])
+print(ssanswer[975])
+```
+
+A class size of 28 or 29 seems to be a fair bet.
 
 # In the class and payoff as described what is a 95% confidence interval for Brownlow's earnings?
   
 <!--Explain and display your method of coming up with a 95% confidence interval of  professor Brownlows winnings (or losings)-->
+
+```{r}
+birthdays=1:365
+saveanswer=vector("numeric")
+for(j in 1:1000){
+
+savebank=0
+for(i in 1:637){
+Classsample<-sample(birthdays,35,replace=TRUE)
+d<-duplicated(Classsample)
+# If we add up d and number greater than zero, then we had responses with the same birthday.
+if(sum(d)>0){
+  savebank=savebank+1
+}else{
+  savebank=savebank-2
+}
+}
+saveanswer[j]<-savebank
+}
+```
+```{r}
+hist(saveanswer)
+ssanswer<-sort(saveanswer)
+print(ssanswer[25])
+print(ssanswer[975])
+```
+The 95% confidence interval is between `r ssanswer[25]` and `r ssanswer[975]`.
 
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
 
+We began this problem by responding to the third question first. We began by determining how much money Brownlow would make if the bet, with 2:1 odds, was completed 637 times. Then we ran this 1000 times to find the 95% confidence interval.  
