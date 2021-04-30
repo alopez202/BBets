@@ -131,4 +131,4 @@ The 95% confidence interval is between `r ssanswer[25]` and `r ssanswer[975]`.
 
 <!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
 
-We began this problem by responding to the third question first. We began by determining how much money Brownlow would make if the bet, with 2:1 odds, was completed 637 times. Then we ran this 1000 times to find the 95% confidence interval.  
+We began this problem by responding to the third question first. We began by determining how much money Brownlow would make if the bet, with 2:1 odds, was completed 637 times. Then we ran this 1000 times to find the 95% confidence interval. The class size that makes 2:1 was 28 people we found that by trying different size classes until we got the 0 in the middle of the histogram.    
